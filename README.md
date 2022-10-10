@@ -1,11 +1,9 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Proyecto GAPSI
 
 Se adjunta un breve resumen sobre el proyecto GAPSI desarrollado por Alexis Hernández Olvera.
 
 Por cuestiones de tiempo el requerimiento para insertar proveedores no fue posible realizarlo en el front-end, pero la API si lo considera.
-## Available Scripts
+## Scripts Disponibles
 
 In the project directory, you can run:
 
