@@ -2,13 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Se adjunta un breve resumen sobre el proyecto GAPSI desarrollado por Alexis Hernández Olvera.
+
+Por cuestiones de tiempo el requerimiento para insertar proveedores no fue posible realizarlo en el front-end, pero la API si lo considera.
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Para inicializar el proyecto. Es necesario iniciar primero la API para que todos los componentes carguen de forma correcta..\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
