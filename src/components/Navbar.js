@@ -44,7 +44,7 @@ function Navbar() {
             <div>
                 <nav className = {navbarClasses.join(" ")}>
                     <Link className="navbar-brand logo" aria-current="page" to="/">
-                            <img src={process.env.PUBLIC_URL + '/images/Log2o.png'} width="160" height="60"/>
+                            <img src={process.env.PUBLIC_URL + '/images/Logo.png'} width="160" height="60"/>
                     </Link>
                     <button 
                         className="navbar-toggler" 
