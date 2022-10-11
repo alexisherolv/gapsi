@@ -6,7 +6,7 @@ import {
     Button,
 } from "reactstrap";
 
-function Navbar() {
+function Navbar({showButton}) {
     const [scrolled, setScrolled] = useState(false);
     const history = useHistory();
 
@@ -32,10 +32,7 @@ function Navbar() {
 
     function logout()
     {
-        localStorage.removeItem("Name");
-        localStorage.removeItem("Email");
-        localStorage.removeItem("Token");
-        localStorage.setItem("Logged", false);
+        //Se eliminan los datos guardados en el Local Storage
         history.push("/");
     }
 
@@ -61,29 +58,16 @@ function Navbar() {
                         <ul className="navbar-nav mx-auto ">
                             <li className="nav-item active">
                                 <Link className="nav-link active" aria-current="page" to="/">
-                                    Inicio
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/">
-                                    Empresas
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/">
-                                    Nosotros
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/">
-                                    Empleos
+                                    e-Commerce Gapsi
                                 </Link>
                             </li>
                         </ul>
                         <div>
-                            <Button type="submit" className="btn-round mb-3 navbar-button" onClick={logout}>
-                                Cerrar Sesión
-                            </Button>
+                            {showButton === true ? (
+                                <Button type="submit" className="btn-round mb-3 navbar-button" onClick={logout}>
+                                    Cerrar Sesión
+                                </Button>
+                            ): null}
                         </div>
                     </div>
                 </nav>

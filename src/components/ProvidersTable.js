@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import {
   Button,
@@ -7,40 +7,7 @@ import {
   Table
 } from "reactstrap";
 
-function ProvidersTable({dataTable, setRecord, getDataProviders, autoCloseAlert2}){
-    const [dataState, setDataState] = useState(
-        dataTable.map((prop, key) => {
-          return {
-            id: key,
-            name: prop.name,
-            razonSocial: prop.razonSocial,
-            adress: prop.address,
-            actions: (
-              // ACCIONES A REALIZAR EN CADA REGISTRO
-              <div className="actions-center">
-                {/*IMPLEMENTAR EDICION PARA CADA REGISTRO */}
-                <abbr title="Eliminar">
-                  <Button
-                    onClick={() => {
-                      getRegistro(key);
-                    }}
-                    color="warning"
-                    size="sm"
-                    className="btn-icon btn-link edit"
-                  >
-                    <i className="fa fa-edit" />
-                  </Button>
-                </abbr>
-              </div>
-            ),
-          };
-        })
-      );
-
-    function getRegistro(key)
-    {
-        setRecord(key) 
-    }
+function ProvidersTable({dataTable, getDataProviders, autoCloseAlert2}){
 
     function deleteProvider(key)
     {
@@ -61,15 +28,15 @@ function ProvidersTable({dataTable, setRecord, getDataProviders, autoCloseAlert2
                 console.log("Hubo un error al procesar la solicitud")
             }
             else{
-                if(data.message === "error")
+                if(data.success === false)
                 {
                     autoCloseAlert2("No se pudo eliminar el proveedor.");
-                    getDataProviders();
+                    getDataProviders(1);
                 }
                 else 
                 {
                     autoCloseAlert2("Proveedor eliminado con éxito.");
-                    getDataProviders();
+                    getDataProviders(1);
                 }
             }
         });
